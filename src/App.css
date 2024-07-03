@@ -1,0 +1,24 @@
+*{
+  background-color: red;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.todoInput{
+  width: 100%;
+  height: 30px;
+  font-size: 5em;
+  border: none;
+}
+.todoInput:focus{
+  border: none;
+  height: 90px;
+  transition: 100ms linear;
+}
+.todoElement{
+  width: 100%;
+  height: 90px;
+  background-color: red;
+  padding: none;
+  margin: none;
+  font-size: 5em;
+}
+
