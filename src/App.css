@@ -4,21 +4,21 @@
 }
 .todoInput{
   width: 100%;
-  height: 30px;
-  font-size: 5em;
+  height: 20px;
+  font-size: 2.5em;
   border: none;
 }
 .todoInput:focus{
   border: none;
-  height: 90px;
+  height: 60px;
   transition: 100ms linear;
 }
 .todoElement{
   width: 100%;
-  height: 90px;
+  height: 20px;
   background-color: red;
   padding: none;
   margin: none;
-  font-size: 5em;
+  font-size: 2.5em;
 }
 
