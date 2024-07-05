@@ -1,24 +1,52 @@
 *{
-  background-color: red;
+  background-color: rgb(56, 56, 56);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+.head{
+  height: 10vh;
+}
+.head > .title{
+  font-size: 3em;
+  font-weight: bold;
+  padding: 0 10px;
+}
+
 .todoInput{
   width: 100%;
   height: 20px;
   font-size: 2.5em;
   border: none;
 }
+.todoInput::placeholder{
+  font-size: .5em;
+  position: absolute;
+  top:1px;
+}
+.todoInput::placeholder:focus{
+  display: none;
+}
 .todoInput:focus{
   border: none;
   height: 60px;
   transition: 100ms linear;
 }
+.todoDone {
+  text-decoration: line-through;
+  background-color: rgb(106, 174, 106);
+}
 .todoElement{
   width: 100%;
-  height: 20px;
-  background-color: red;
-  padding: none;
+  height: 50px;
+  padding: 20px 10px;
   margin: none;
   font-size: 2.5em;
+  user-select: none;
+  position: relative;
 }
+.todoElement > p{
+  background-color: inherit;
+}
+
 
