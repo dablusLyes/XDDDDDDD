@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import Todo from './components/todo';
 import './App.css'
 import Draggable, { DraggableCore } from "react-draggable";
 function App() {
@@ -10,23 +11,8 @@ function App() {
   const [enterPos, setEnterPos] = useState(0)
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  const colors = [
-    "#FF5733",
-    "#FFBD33",
-    "#75FF33",
-    "#33FF57",
-    "#33FFBD",
-    "#33CFFF",
-    "#3357FF",
-    "#7533FF",
-    "#BD33FF",
-    "#FF33A8"
-  ]
 
-  const getRandomColor = () => {
-    const randomIndex = Math.floor(Math.random() * colors.length);
-    return colors[randomIndex];
-  };
+
 
   const addToList = () => {
     if (todoList.indexOf(text) === -1 && text !== '') {
@@ -36,14 +22,11 @@ function App() {
   }
 
   function handleDrag(e, id) {
+    console.log('zebiiii');
     if (isDragged) {
       if ((e.clientX - enterPos) > 30) {
-        if (todoList[id].isDone === false) {
-          let changedEl = { text: todoList[id].text, isDone: true }
-          setTodoList(todoList.splice(id, 1, changedEl))
-        } else {
-          setTodoList(todoList.splice(id, 1))
-        }
+        let changedEl = { text: todoList[id].text, isDone: true }
+        setTodoList(todoList.splice(id, 1, changedEl))
       }
     }
   }
@@ -71,26 +54,7 @@ function App() {
             onMouseUp={onMouseUp}
             key={id}
           >
-
-            <div
-
-              onMouseDown={(e) => {
-                onMouseDown(e);
-                setDragged(true);
-              }}
-              onMouseUp={() => { onMouseUp() }}
-              onMouseOut={() => { onMouseOut() }}
-              key={id}
-              id={`todoElement${id}`}
-              className={el.isDone ? 'todoDone todoElement ' : 'todoElement '}
-              style={{
-                background: colors[id],
-              }} >
-
-              <p key={id}>
-                {el.text}
-              </p>
-            </div>
+            <Todo id={idx} text={el.text} isDone={el.isDone}></Todo>
           </Draggable>
 
         )
